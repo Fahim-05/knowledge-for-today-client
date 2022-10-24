@@ -4,8 +4,8 @@ import { router } from './Routes/Routes/Router';
 
 function App() {
   return (
-    <div className="">
-      <RouterProvider router={router}></RouterProvider>
+    <div className="App">
+          <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
