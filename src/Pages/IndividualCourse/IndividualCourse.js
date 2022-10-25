@@ -15,11 +15,11 @@ const IndividualCourse = () => {
 
             <Container className='mb-5'>
                 <Row>
-                    <Col lg='4'>
+                    <Col lg='3'>
                         <LeftSideOptions></LeftSideOptions>
 
                     </Col>
-                    <Col lg='8' className='w-50 m-auto mt-5'>
+                    <Col lg='9' className='w-50 m-auto mt-2'>
                         <Card style={{ width: 650 }}>
                             <Card.Img variant="top" height={350} src={image} />
                             <Card.Body>
