@@ -1,11 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext);
+    const [error, setError] = useState('');
+
+    const navigate = useNavigate();
+    const { createUser } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -17,12 +20,17 @@ const Register = () => {
         console.log(name, email, password);
 
         createUser(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-            form.reset();
-        })
-        .catch(error=> console.error(error));
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setError('');
+                form.reset();
+                navigate('/login');
+            })
+            .catch(error => {
+                console.error(error)
+                setError(error.message);
+            });
 
     }
 
@@ -36,14 +44,14 @@ const Register = () => {
 
                 <Form.Group className="mb-1 text-white">
                     <Form.Label >Email address</Form.Label>
-                    <Form.Control name='email' type="email" placeholder="Enter email" required/>
+                    <Form.Control name='email' type="email" placeholder="Enter email" required />
                 </Form.Group>
 
                 <Form.Group className="mb-1 text-white">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control name='password' type="password" placeholder="Password" required/>
+                    <Form.Control name='password' type="password" placeholder="Password" required />
                 </Form.Group>
-                
+
                 <p className='text-light mt-2'>Already have an account? Please <Link to='/login' className='text-warning'>Login</Link> </p>
                 <Form.Group className="mb-1 text-warning">
                     <Form.Check type="checkbox" label="Accept terms & conditions" />
@@ -51,8 +59,8 @@ const Register = () => {
                 <Button variant="outline-warning" type="submit">
                     Register
                 </Button>
-                <Form.Text className="text-danger bg-dark">
-                    We'll never share your email with anyone else.
+                <Form.Text className="text-white bg-danger ms-2 rounded">
+                    {error}
                 </Form.Text>
             </Form>
         </div>
