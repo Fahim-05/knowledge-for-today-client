@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div className="">
             <div className='w-50 m-auto text-center'>
-                <h1 className='text-success mt-1 '>Welcome to <span className='text-danger'>The Planet of Knowledge</span></h1>
+                <h1 className='text-dark mt-1 '>Welcome to The Planet of <span className='text-warning'>Knowledge</span></h1>
                 <p className='text-secondary'>This is the platform where you can learn more what you want. Just take a course which you prefer, and start right now</p>
 
                 <p><Link to='/course'><Button variant="outline-success">Get Started</Button></Link></p>
@@ -22,7 +22,8 @@ const Home = () => {
                     <Carousel.Item>
                         <img
                             className="rounded"
-                            width={400}
+                            width='900px'
+                            height='500px'
                             src={slide1}
                             alt="First slide"
                         />
@@ -30,7 +31,8 @@ const Home = () => {
                     <Carousel.Item>
                         <img
                             className="rounded"
-                            width={400}
+                            width='900px'
+                            height='500px'
                             src={slide2}
                             alt="Second slide"
                         />
@@ -38,7 +40,8 @@ const Home = () => {
                     <Carousel.Item>
                         <img
                             className="rounded"
-                            width={400}
+                            width='900px'
+                            height='500px'
                             src={slide3}
                             alt="Third slide"
                         />
@@ -46,7 +49,8 @@ const Home = () => {
                     <Carousel.Item>
                         <img
                             className="rounded"
-                            width={400}
+                            width='900px'
+                            height='500px'
                             src={slide4}
                             alt="Fourth slide"
                         />

@@ -11,15 +11,16 @@ const LeftSideOptions = () => {
     }, [])
 
     return (
-        <div>
-            <h2>Options: {options.length}</h2>
+        <div className='bg-secondary p-2 mt-2 rounded'>
+            <h2 className='text-warning text-center'>Courses</h2>
+            <hr className='text-warning'></hr>
             {
                 options.map(course => <p
                     key={`/course/${course.id}`}>
                     <Link to={`/course/${course.id}`}
-                    className='text-decoration-none'
+                    className='text-decoration-none text-warning fs-4'
                     >
-                        {course.name}
+                        {course.id}. {course.name}
                     </Link>
                 </p>)
             }

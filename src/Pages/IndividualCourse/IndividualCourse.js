@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import LeftSideOptions from '../Shared/LeftSideOptions/LeftSideOptions';
@@ -13,37 +13,42 @@ const IndividualCourse = () => {
     return (
         <div>
 
-            <Container>
+            <Container className='mb-5'>
                 <Row>
-                    <Col lg='3'>
+                    <Col lg='4'>
                         <LeftSideOptions></LeftSideOptions>
 
                     </Col>
-                    <Col lg='9' className='w-50 m-auto mt-5'>
-                        <Card style={{ width: 600 }}>
+                    <Col lg='8' className='w-50 m-auto mt-5'>
+                        <Card style={{ width: 650 }}>
                             <Card.Img variant="top" height={350} src={image} />
                             <Card.Body>
                                 <Card.Title className='text-center fw-bold fs-4 text-success'>{course_name}</Card.Title>
 
-                                <div className='d-flex justify-content-between align-items-center'>
-                                    <div className='d-flex align-items-center mt-2'>
+                                <div className='d-flex justify-content-between align-items-center border p-2 rounded mt-4 bg-light'>
+                                    <div className='d-flex align-items-center'>
                                         <Image
                                             width="70px"
                                             height="70px"
                                             roundedCircle
-                                            src={instructor[0].img} />
-                                        <p className='ms-2 mt-1 fw-bold'>{instructor[0].name}</p>
+                                            src={instructor.img} />
+                                        <div className='d-flex flex-column justify-content-center'>
+                                            <p className='mb-0 ms-2 text-secondary'>Instructor:</p>
+                                            <p className='ms-2 fw-bold'>{instructor.name}</p>
+                                        </div>
                                     </div>
                                     <div className='d-flex align-items-center gap-1'>
-                                        <p className='me-5 text-danger fw-bold'><FaDollarSign className='mb-1'></FaDollarSign>{price}</p>
-                                        <p className='text-success fw-bold'><FaUser className='mb-1 me-1'></FaUser>{obtain}</p>
+                                        <p className='me-3 text-danger fw-bold'>Price: <FaDollarSign className='mb-1'></FaDollarSign>{price}</p>
+                                        <p className='text-success fw-bold'>Done: <FaUser className='mb-1 me-1'></FaUser>{obtain}</p>
                                     </div>
                                 </div>
 
-                                <Card.Text className='text-secondary'>
+                                <Card.Text className='text-secondary mt-3'>
                                     {about}
                                 </Card.Text>
-                                <Button variant="success">Go All Courses</Button>
+                                <div className='text-center'>
+                                    <Link><Button variant="success">Get Premium Access</Button></Link>
+                                </div>
                             </Card.Body>
                         </Card>
                     </Col>

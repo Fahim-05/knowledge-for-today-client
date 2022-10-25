@@ -11,10 +11,10 @@ const Course = () => {
         <div>
             <Container>
                 <Row>
-                    <Col lg='3'>
+                    <Col lg='4'>
                         <LeftSideOptions></LeftSideOptions>
                     </Col>
-                    <Col lg='9' className='d-flex flex-wrap gap-4 mt-3 mb-2'>
+                    <Col lg='8' className='d-flex flex-wrap justify-content-evenly  gap-5 mt-3 mb-2'>
                         {
                             allCourse.map(course => <CourseCard
                             key={course.id}
