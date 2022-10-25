@@ -8,6 +8,7 @@ import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/logo.png'
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import Tooltip from 'react-bootstrap';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -42,7 +43,7 @@ const Header = () => {
                                     user?.uid ?
                                         <>
                                             <Link onClick={handleLogOut} className='text-decoration-none text-white me-4 border px-2 py-1 rounded bg-danger'>Log out</Link>
-                                            <span className='text-white bg-success px-1 rounded'>{user?.displayName}</span>
+                                            <span className='text-white bg-success px-1 rounded' >{user?.displayName}</span>
                                         </>
                                         :
                                         <>
@@ -53,10 +54,13 @@ const Header = () => {
                                 }
 
                             </Nav.Link>
-                            <Nav.Link >
+                            <Nav.Link>
                                 {user?.photoURL ?
                                     <Image
-                                        className='border border-success border-4'
+                                        
+                                        className='border border-success border-4 tt'
+                                        data-bs-placement='bottom'
+                                        title={user?.displayName}
                                         style={{ height: '40px' }}
                                         roundedCircle
                                         src={user?.photoURL}
