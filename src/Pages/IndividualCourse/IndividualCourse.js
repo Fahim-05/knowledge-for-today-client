@@ -19,9 +19,9 @@ const IndividualCourse = () => {
                         <LeftSideOptions></LeftSideOptions>
 
                     </Col>
-                    <Col lg='9' className='w-50 m-auto mt-2'>
-                        <Card style={{ width: 650 }}>
-                            <Card.Img variant="top" height={350} src={image} />
+                    <Col lg='9' className=' m-auto mt-2'>
+                        <Card className='shadow rounded-lg'>
+                            <Card.Img variant="top" height={400} src={image} />
                             <Card.Body>
                                 <Card.Title className='text-center fw-bold fs-4 text-success'>{course_name}</Card.Title>
 

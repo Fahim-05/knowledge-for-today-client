@@ -11,19 +11,19 @@ const Home = () => {
     return (
         <div className="">
             <div className='w-50 m-auto text-center'>
-                <h1 className='text-dark mt-1 '>Welcome to The Planet of <span className='text-warning'>Knowledge</span></h1>
-                <p className='text-secondary'>This is the platform where you can learn more what you want. Just take a course which you prefer, and start right now</p>
+                <h2 className='text-dark mt-1 '>Welcome to The Planet of <span className='text-success fs-1 fw-bold'>Knowledge</span></h2>
+                <p className='text-secondary'><small>This is the platform where you can learn more about <span className='text-danger fw-bold'>Computer Science</span>. Just take a tour to our website and choose which one you want to learn with us , and start right now. Thank you sir.</small></p>
 
                 <p><Link to='/course'><Button variant="outline-success">Get Started</Button></Link></p>
             </div>
 
-            <div className='text-center m-auto'>
+            <div className='text-center m-auto w-50'>
                 <Carousel>
                     <Carousel.Item>
                         <img
                             className="rounded"
-                            width='900px'
-                            height='500px'
+                            width='500px'
+                            height='300px'
                             src={slide1}
                             alt="First slide"
                         />
@@ -31,8 +31,8 @@ const Home = () => {
                     <Carousel.Item>
                         <img
                             className="rounded"
-                            width='900px'
-                            height='500px'
+                            width='500px'
+                            height='300px'
                             src={slide2}
                             alt="Second slide"
                         />
@@ -40,8 +40,8 @@ const Home = () => {
                     <Carousel.Item>
                         <img
                             className="rounded"
-                            width='900px'
-                            height='500px'
+                            width='500px'
+                            height='300px'
                             src={slide3}
                             alt="Third slide"
                         />
@@ -49,8 +49,8 @@ const Home = () => {
                     <Carousel.Item>
                         <img
                             className="rounded"
-                            width='900px'
-                            height='500px'
+                            width='500px'
+                            height='300px'
                             src={slide4}
                             alt="Fourth slide"
                         />

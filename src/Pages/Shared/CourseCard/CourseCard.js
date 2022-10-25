@@ -8,7 +8,7 @@ const CourseCard = ({ course }) => {
     const { image, course_name, about, obtain, id } = course;
     // console.log(course);
     return (
-        <div>
+        <div className='shadow rounded'>
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={image} />
                 <Card.Body>
