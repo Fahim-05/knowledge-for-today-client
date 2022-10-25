@@ -10,7 +10,14 @@ import logo from '../../../assets/images/logo.png'
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -30,31 +37,32 @@ const Header = () => {
                             <Link className='text-decoration-none text-warning' to='/faq'>FAQ</Link>
                         </Nav>
                         <Nav className='gap-2'>
-                            <Nav.Link >
+                            <Nav.Link className='mt-1'>
                                 {
-                                    user.uid ?
+                                    user?.uid ?
                                         <>
-                                            <Link className='text-decoration-none text-white me-4 border px-2 py-1 rounded bg-danger'>Log out</Link>
-                                            <span>{user?.displayName}</span>
+                                            <Link onClick={handleLogOut} className='text-decoration-none text-white me-4 border px-2 py-1 rounded bg-danger'>Log out</Link>
+                                            <span className='text-white bg-success px-1 rounded'>{user?.displayName}</span>
                                         </>
                                         :
                                         <>
-                                            <Link to='/login'>Login</Link>
-                                            <Link to='/register'>Register</Link>
+                                            <Link className='text-decoration-none me-3 text-light' to='/login'>Login</Link>
+                                            <Link className='text-decoration-none me-2 text-light' to='/register'>Register</Link>
                                         </>
 
                                 }
 
                             </Nav.Link>
                             <Nav.Link >
-                                {user.photoURL ?
+                                {user?.photoURL ?
                                     <Image
+                                        className='border border-success border-4'
                                         style={{ height: '40px' }}
                                         roundedCircle
                                         src={user?.photoURL}
                                     ></Image>
                                     :
-                                    <FaUser></FaUser>
+                                    <FaUser className='mb-1 text-danger'></FaUser>
                                 }
                             </Nav.Link>
                         </Nav>
