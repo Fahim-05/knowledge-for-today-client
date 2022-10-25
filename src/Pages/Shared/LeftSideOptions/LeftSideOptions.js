@@ -14,12 +14,12 @@ const LeftSideOptions = () => {
         <div>
             <h2>Options: {options.length}</h2>
             {
-                options.map(option => <p
-                    key={`/options/${option.id}`}>
-                    <Link to={`/course/${option.id}`}
+                options.map(course => <p
+                    key={`/course/${course.id}`}>
+                    <Link to={`/course/${course.id}`}
                     className='text-decoration-none'
                     >
-                        {option.name}
+                        {course.name}
                     </Link>
                 </p>)
             }

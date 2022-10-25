@@ -3,6 +3,7 @@ import Main from "../../layouts/Main";
 import Blog from "../../Pages/Blog/Blog";
 import Course from "../../Pages/Course/Course";
 import Home from "../../Pages/Home/Home";
+import IndividualCourse from "../../Pages/IndividualCourse/IndividualCourse";
 
 export const router = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/course/:id',
-                element: <Course></Course>,
+                element: <IndividualCourse></IndividualCourse>,
                 loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`)
             },
             {

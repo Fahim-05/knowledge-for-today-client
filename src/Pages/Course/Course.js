@@ -6,7 +6,7 @@ import LeftSideOptions from '../Shared/LeftSideOptions/LeftSideOptions';
 
 const Course = () => {
     const allCourse = useLoaderData();
-    console.log(allCourse);
+    // console.log(allCourse);
     return (
         <div>
             <Container>

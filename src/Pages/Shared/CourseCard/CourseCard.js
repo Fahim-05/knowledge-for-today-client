@@ -6,7 +6,7 @@ import { FaUser } from "react-icons/fa";
 
 const CourseCard = ({course}) => {
     const {image, course_name, about, obtain, id} = course;
-    console.log(course);
+    // console.log(course);
     return (
         <div>
             <Card style={{ width: '18rem' }}>
