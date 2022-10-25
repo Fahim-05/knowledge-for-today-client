@@ -1,18 +1,19 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import Course from '../Course/Course';
 import LeftSideOptions from '../Shared/LeftSideOptions/LeftSideOptions';
 
-const Courses = () => {
+const Options = () => {
     return (
         <div>
             <Container>
                 <Row>
                     <Col lg='4'>
                         <LeftSideOptions></LeftSideOptions>
+
                     </Col>
                     <Col lg='8'>
-                        <Course></Course>
+                        <h3>This is options</h3>
+
                     </Col>
                 </Row>
             </Container>
@@ -20,4 +21,4 @@ const Courses = () => {
     );
 };
 
-export default Courses;
+export default Options;
