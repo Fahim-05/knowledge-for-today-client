@@ -1,5 +1,4 @@
 import React from 'react';
-import { Image } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
@@ -11,17 +10,19 @@ import slide4 from '../../assets/images/slide4.jpg'
 const Home = () => {
     return (
         <div className="">
-            <h1 className='text-success mt-5'>Welcome to <span className='text-danger'>The Planet of Knowledge</span></h1>
-            <p className='text-secondary'>This is the platform where you can learn more what you want. Just take a course which you prefer, and start right now</p>
+            <div className='w-50 m-auto text-center'>
+                <h1 className='text-success mt-1 '>Welcome to <span className='text-danger'>The Planet of Knowledge</span></h1>
+                <p className='text-secondary'>This is the platform where you can learn more what you want. Just take a course which you prefer, and start right now</p>
 
-            <p><Link to='/courses'><Button variant="outline-success">Get Started</Button></Link></p>
+                <p><Link to='/course'><Button variant="outline-success">Get Started</Button></Link></p>
+            </div>
 
-            <div className='w-50 m-auto'>
+            <div className='text-center m-auto'>
                 <Carousel>
                     <Carousel.Item>
                         <img
                             className="rounded"
-                            width={600}
+                            width={400}
                             src={slide1}
                             alt="First slide"
                         />
@@ -29,7 +30,7 @@ const Home = () => {
                     <Carousel.Item>
                         <img
                             className="rounded"
-                            width={600}
+                            width={400}
                             src={slide2}
                             alt="Second slide"
                         />
@@ -37,7 +38,7 @@ const Home = () => {
                     <Carousel.Item>
                         <img
                             className="rounded"
-                            width={600}
+                            width={400}
                             src={slide3}
                             alt="Third slide"
                         />
@@ -45,7 +46,7 @@ const Home = () => {
                     <Carousel.Item>
                         <img
                             className="rounded"
-                            width={600}
+                            width={400}
                             src={slide4}
                             alt="Fourth slide"
                         />

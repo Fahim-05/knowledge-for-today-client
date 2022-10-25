@@ -1,9 +1,29 @@
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import { useLoaderData } from 'react-router-dom';
+import CourseCard from '../Shared/CourseCard/CourseCard';
+import LeftSideOptions from '../Shared/LeftSideOptions/LeftSideOptions';
 
 const Course = () => {
+    const allCourse = useLoaderData();
+    console.log(allCourse);
     return (
         <div>
-            <h1>This is course</h1>
+            <Container>
+                <Row>
+                    <Col lg='3'>
+                        <LeftSideOptions></LeftSideOptions>
+                    </Col>
+                    <Col lg='9' className='d-flex flex-wrap gap-4 mt-3 mb-2'>
+                        {
+                            allCourse.map(course => <CourseCard
+                            key={course.id}
+                            course={course}
+                            ></CourseCard>)
+                        }
+                    </Col>
+                </Row>
+            </Container>
         </div>
     );
 };

@@ -16,7 +16,7 @@ const LeftSideOptions = () => {
             {
                 options.map(option => <p
                     key={`/options/${option.id}`}>
-                    <Link to={`/option/${option.id}`}
+                    <Link to={`/course/${option.id}`}
                     className='text-decoration-none'
                     >
                         {option.name}
