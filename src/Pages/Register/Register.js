@@ -21,7 +21,8 @@ const Register = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control name='password' type="password" placeholder="Password" required/>
                 </Form.Group>
-                <p className='text-light'>Do you have account? Please <Link to='/login' className='text-warning'>Login</Link> </p>
+                
+                <p className='text-light mt-2'>Already have an account? Please <Link to='/login' className='text-warning'>Login</Link> </p>
                 <Form.Group className="mb-1 text-warning">
                     <Form.Check type="checkbox" label="Accept terms & conditions" />
                 </Form.Group>
