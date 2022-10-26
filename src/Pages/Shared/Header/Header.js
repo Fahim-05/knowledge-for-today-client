@@ -107,7 +107,7 @@ const Header = () => {
                         <Form.Check
                             onClick={() => toogleTheme(theme)}
                             type="switch"
-                            id="custom-switch"/>
+                            id="custom-switch" />
                     </Form>
 
                     {
