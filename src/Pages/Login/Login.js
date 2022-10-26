@@ -5,14 +5,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 
 const Login = () => {
 
     const [error, setError] = useState('');
 
-    const { providerLogin, signIn } = useContext(AuthContext);
+    const { providerLogin, signIn, providerGithubSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -26,9 +26,26 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 navigate(from, { replace: true })
+                navigate(from, { replace: true })
             })
             .catch(error => console.error(error));
     }
+
+
+    // github provider
+    const githubProvider = new GithubAuthProvider();
+    const handleGithubSignIn = () => {
+        providerGithubSignIn(githubProvider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            navigate(from, { replace: true })
+        })
+        .catch(error => console.error(error));
+    };
+
+
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -70,7 +87,7 @@ const Login = () => {
                 <div>
                     <ButtonGroup className='mt-3 mb-2 d-flex'>
                         <Button onClick={handleGoogleSignIn} variant="outline-dark" className='text-primary me-5 rounded'><FaGoogle className='mb-1'></FaGoogle> Login with Google</Button>
-                        <Button variant="outline-dark" className='text-success rounded'><FaGithub className='mb-1'></FaGithub> Login with GitHub</Button>
+                        <Button onClick={handleGithubSignIn} variant="outline-dark" className='text-success rounded'><FaGithub className='mb-1'></FaGithub> Login with GitHub</Button>
                     </ButtonGroup>
 
                 </div>
