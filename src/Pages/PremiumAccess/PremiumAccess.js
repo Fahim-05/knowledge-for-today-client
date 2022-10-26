@@ -5,7 +5,7 @@ import { FaCheck, FaDollarSign, FaStar, FaUser } from "react-icons/fa";
 import { Image } from 'react-bootstrap';
 
 const PremiumAccess = () => {
-    const premiumAccess = useLoaderData();
+    const {premiumAccess, user} = useLoaderData();
     const { id, about, course_name, image, instructor, obtain, price } = premiumAccess;
 
     return (

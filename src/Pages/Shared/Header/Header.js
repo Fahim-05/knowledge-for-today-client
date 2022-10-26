@@ -9,6 +9,7 @@ import logo from '../../../assets/images/logo.png'
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import Tooltip from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 const Header = () => {
     const [theme, setTheme] = useState(false);
@@ -37,7 +38,7 @@ const Header = () => {
     // },[theme])
 
     return (
-        <div>
+        <div className=''>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
                     <Image
@@ -46,28 +47,28 @@ const Header = () => {
                         height="60"
                     ></Image>
 
-                    <Navbar.Brand className='text-white fw-bold'>Knowledge For Today</Navbar.Brand>
+                    <Navbar.Brand className='text-white fw-bold fs-3'>Knowledge For Today</Navbar.Brand>
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto gap-3">
-                            <Link className='text-decoration-none text-warning' to='/'>Home</Link>
-                            <Link className='text-decoration-none text-warning' to='/course'>Courses</Link>
-                            <Link className='text-decoration-none text-warning' to='/blog'>Blog</Link>
-                            <Link className='text-decoration-none text-warning' to='/faq'>FAQ</Link>
+                        <Nav className="m-auto gap-3">
+                            <Link className='text-decoration-none text-warning fs-5' to='/'>Home</Link>
+                            <Link className='text-decoration-none text-warning fs-5' to='/course'>Course</Link>
+                            <Link className='text-decoration-none text-warning fs-5' to='/blog'>Blog</Link>
+                            <Link className='text-decoration-none text-warning fs-5' to='/faq'>FAQ</Link>
                         </Nav>
                         <Nav className='gap-2'>
                             <Nav.Link className='mt-1'>
                                 {
                                     user?.uid ?
                                         <>
-                                            <Link onClick={handleLogOut} className='text-decoration-none text-white me-4 border px-2 py-1 rounded bg-danger'>Log out</Link>
-                                            <span className='text-white bg-success px-1 rounded' >{user?.displayName}</span>
+                                            <Link onClick={handleLogOut} className='text-decoration-none text-white me-4 '><Button variant="outline-danger">Log Out</Button></Link>
+                                            <span className='text-light' >{user?.displayName}</span>
                                         </>
                                         :
                                         <>
-                                            <Link className='text-decoration-none me-3 text-light' to='/login'>Login</Link>
-                                            <Link className='text-decoration-none me-2 text-light' to='/register'>Register</Link>
+                                            <Link className='text-decoration-none me-3 text-light' to='/login'><Button variant="outline-warning">Login</Button></Link>
+                                            <Link className='text-decoration-none me-2 text-light' to='/register'><Button variant="outline-warning">Register</Button></Link>
                                         </>
 
                                 }
@@ -77,15 +78,15 @@ const Header = () => {
                                 {user?.photoURL ?
                                     <Image
 
-                                        className='border border-success border-4 tt'
+                                        className='border'
                                         data-bs-placement='bottom'
                                         title={user?.displayName}
-                                        style={{ height: '40px' }}
+                                        style={{ height: '50px' }}
                                         roundedCircle
                                         src={user?.photoURL}
                                     ></Image>
                                     :
-                                    <FaUser className='mb-1 text-danger'></FaUser>
+                                    <FaUser className='mt-2 text-danger'></FaUser>
                                 }
                             </Nav.Link>
                         </Nav>
@@ -93,7 +94,7 @@ const Header = () => {
                 </Container>
 
                 {/* theme toggler button */}
-                <div className='text-white me-2 d-flex align-items-center gap-1'>
+                <div className='text-white me-1 d-flex align-items-center gap-1'>
 
                     {
                         theme ?
@@ -111,7 +112,7 @@ const Header = () => {
 
                     {
                         theme ?
-                            <FaMoon className='text-warning'></FaMoon>
+                            <FaMoon className='text-light'></FaMoon>
                             :
                             <FaMoon className='text-secondary'></FaMoon>
                     }

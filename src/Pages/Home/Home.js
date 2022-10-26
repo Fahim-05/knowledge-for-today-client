@@ -9,15 +9,15 @@ import slide4 from '../../assets/images/slide4.jpg'
 
 const Home = () => {
     return (
-        <div className="">
+        <div className="d-flex flex-column align-items-center" style={{backgroundImage: `url("https://images.pexels.com/photos/8099382/pexels-photo-8099382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")`, height: '590px'}}>
             <div className='w-50 m-auto text-center'>
-                <h2 className='text-dark mt-1' >Welcome to The Planet of <span className='text-success fs-1 fw-bold'>Knowledge</span></h2>
+                <h2 className='text-dark fs-2 fw-bold' >Welcome to The Planet of <span className='text-success'>Knowledge</span></h2>
                 <p className='text-secondary'><small>This is the platform where you can learn more about <span className='text-danger fw-bold'>Computer Science</span>. Just take a tour to our website and choose which one you want to learn with us , and start right now. Thank you sir.</small></p>
 
-                <p><Link to='/course'><Button variant="outline-success">Get Started</Button></Link></p>
+                <p><Link to='/course'><Button variant="success">Get Started</Button></Link></p>
             </div>
 
-            <div className='text-center m-auto w-50'>
+            {/* <div className='text-center m-auto w-50'>
                 <Carousel>
                     <Carousel.Item>
                         <img
@@ -56,7 +56,11 @@ const Home = () => {
                         />
                     </Carousel.Item>
                 </Carousel>
-            </div>
+            </div> */}
+
+            <footer className=''>
+                <small className='text-dark'>All right reserved @ Fahim Abdullah</small>
+            </footer>
 
         </div>
     );
