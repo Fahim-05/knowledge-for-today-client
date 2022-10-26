@@ -14,7 +14,7 @@ const Course = () => {
                     <Col lg='3'>
                         <LeftSideOptions></LeftSideOptions>
                     </Col>
-                    <Col lg='9' className='d-flex flex-wrap justify-content-evenly gap-4 mt-2 mb-5'>
+                    <Col lg='9' className='d-flex flex-wrap justify-content-evenly gap-4 mt-2 mb-5 '>
                         {
                             allCourse.map(course => <CourseCard
                             key={course.id}

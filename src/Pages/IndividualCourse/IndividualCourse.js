@@ -47,7 +47,7 @@ const IndividualCourse = () => {
                                     {about}
                                 </Card.Text>
                                 <div className='text-center'>
-                                    <Link to='/premium'><Button variant="success">Get Premium Access</Button></Link>
+                                    <Link to={`/premium/${id}`}><Button variant="success">Get Premium Access</Button></Link>
                                 </div>
                             </Card.Body>
                         </Card>
