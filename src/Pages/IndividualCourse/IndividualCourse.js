@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import LeftSideOptions from '../Shared/LeftSideOptions/LeftSideOptions';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 import { FaDollarSign, FaUser } from "react-icons/fa";
+import Pdf from 'react-to-pdf';
+
 
 const IndividualCourse = () => {
+    const ref = React.createRef();
     const oneCourseCard = useLoaderData();
     const { id, about, course_name, image, instructor, obtain, price } = oneCourseCard;
     console.log(oneCourseCard)
+
     return (
-        <div>
+        <div >
 
             <Container className='mb-5'>
                 <Row>
@@ -19,7 +23,16 @@ const IndividualCourse = () => {
                         <LeftSideOptions></LeftSideOptions>
 
                     </Col>
-                    <Col lg='9' className=' m-auto mt-2'>
+                    <Col ref={ref} lg='7' className=' m-auto mt-2'>
+
+                        {/* download pdf file  */}
+                        <div className='text-center mt-1 mb-1'>
+                            <Pdf targetRef={ref} filename={`${course_name}.pdf`}>
+                                {({ toPdf }) => <Button onClick={toPdf} className='shadow' variant="outline-secondary">Download PDF</Button>}
+                            </Pdf>
+                        </div>
+
+
                         <Card className='shadow rounded-lg'>
                             <Card.Img variant="top" height={400} src={image} />
                             <Card.Body>
