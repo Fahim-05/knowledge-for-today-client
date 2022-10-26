@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 const LeftSideOptions = () => {
     const [options, setOptions] = useState([]);
@@ -18,9 +19,9 @@ const LeftSideOptions = () => {
                 options.map(course => <p
                     key={`/course/${course.id}`}>
                     <Link to={`/course/${course.id}`}
-                    className='text-decoration-none text-success'
-                    >
-                        {course.id}. {course.name}
+                    className='text-decoration-none text-success text-start'>
+
+                        <Button variant="outline-success" className=''><small>{course.id}. {course.name}</small></Button>
                     </Link>
                 </p>)
             }

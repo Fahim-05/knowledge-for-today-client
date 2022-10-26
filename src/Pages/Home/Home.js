@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div className="">
             <div className='w-50 m-auto text-center'>
-                <h2 className='text-dark mt-1 '>Welcome to The Planet of <span className='text-success fs-1 fw-bold'>Knowledge</span></h2>
+                <h2 className='text-dark mt-1' >Welcome to The Planet of <span className='text-success fs-1 fw-bold'>Knowledge</span></h2>
                 <p className='text-secondary'><small>This is the platform where you can learn more about <span className='text-danger fw-bold'>Computer Science</span>. Just take a tour to our website and choose which one you want to learn with us , and start right now. Thank you sir.</small></p>
 
                 <p><Link to='/course'><Button variant="outline-success">Get Started</Button></Link></p>
