@@ -6,7 +6,7 @@ const LeftSideOptions = () => {
     const [options, setOptions] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/course-options')
+        fetch('https://knowledge-for-today-server.vercel.app/course-options')
             .then(res => res.json())
             .then(data => setOptions(data))
     }, [])

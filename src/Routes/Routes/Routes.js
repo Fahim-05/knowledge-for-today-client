@@ -6,6 +6,7 @@ import FAQ from "../../Pages/FAQ/FAQ";
 import Home from "../../Pages/Home/Home";
 import IndividualCourse from "../../Pages/IndividualCourse/IndividualCourse";
 import Login from "../../Pages/Login/Login";
+import PageNotFound from "../../Pages/PageNotFound/PageNotFound";
 import PremiumAccess from "../../Pages/PremiumAccess/PremiumAccess";
 import Register from "../../Pages/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -22,12 +23,12 @@ export const router = createBrowserRouter([
             {
                 path: '/course',
                 element: <Course></Course>,
-                loader: () => fetch('http://localhost:5000/course')
+                loader: () => fetch('https://knowledge-for-today-server.vercel.app/course')
             },
             {
                 path: '/course/:id',
                 element: <IndividualCourse></IndividualCourse>,
-                loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({params}) => fetch(`https://knowledge-for-today-server.vercel.app/course/${params.id}`)
             },
             {
                 path: '/blog',
@@ -44,7 +45,7 @@ export const router = createBrowserRouter([
             {
                 path: '/premium/:id',
                 element: <PrivateRoute><PremiumAccess></PremiumAccess></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({params}) => fetch(`https://knowledge-for-today-server.vercel.app/course/${params.id}`)
             },
             {
                 path: '/faq',
@@ -54,6 +55,6 @@ export const router = createBrowserRouter([
     },
     {
         path: '*',
-        element: <div>This path not found!</div>
+        element: <PageNotFound></PageNotFound>
     }
 ])
