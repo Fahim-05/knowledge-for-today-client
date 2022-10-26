@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layouts/Main";
 import Blog from "../../Pages/Blog/Blog";
 import Course from "../../Pages/Course/Course";
+import FAQ from "../../Pages/FAQ/FAQ";
 import Home from "../../Pages/Home/Home";
 import IndividualCourse from "../../Pages/IndividualCourse/IndividualCourse";
 import Login from "../../Pages/Login/Login";
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
                 path: '/premium/:id',
                 element: <PrivateRoute><PremiumAccess></PremiumAccess></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`)
+            },
+            {
+                path: '/faq',
+                element: <FAQ></FAQ>
             }
         ]
     },
